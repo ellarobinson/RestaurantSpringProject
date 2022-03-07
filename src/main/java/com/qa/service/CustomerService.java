@@ -1,5 +1,7 @@
 package com.qa.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +23,9 @@ public class CustomerService {
 		return this.repo.save(customer);
 	}
 	
-	
+	public List<Customer> readAllCustomers() {
+		return this.repo.findAll();
+	}
 	
 
 }
