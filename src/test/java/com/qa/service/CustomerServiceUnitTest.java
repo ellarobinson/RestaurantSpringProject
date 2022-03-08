@@ -3,6 +3,7 @@ package com.qa.service;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -39,5 +40,19 @@ public class CustomerServiceUnitTest {
 		assertThat(this.service.readAllCustomers()).isEqualTo(List.of(customer1, customer2));
 		Mockito.verify(this.repo, Mockito.times(1)).findAll();
 	}
+	
+	@Test
+	public void getCustomerByIdTest() {
+		int id = 1;
+		Customer customer1 = new Customer("Mark", 53, "07384916302", "mark@gmail.com", "1 Example Street", 7);
+		Mockito.when(this.repo.findById(id)).thenReturn(Optional.of(customer1));
+		assertThat(this.service.readCustomerById(id)).isEqualTo(customer1);
+		Mockito.verify(this.repo, Mockito.times(1)).findById(Mockito.anyInt());
+	}
+	
+	
+	
+	
+	
 
 }
