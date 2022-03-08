@@ -27,5 +27,16 @@ public class CustomerService {
 		return this.repo.findAll();
 	}
 	
+	public Customer readCustomerById(int customerId) {
+		return this.repo.findById(customerId).orElseThrow();
+	}
+	
+	public List<Customer> readCustomersByName(String name) {
+		return this.repo.findByName(name);
+	}
+	
+	public Customer readCustomerByPhone(String phone) {
+		return this.repo.findByPhone(phone);
+	}
 
 }
