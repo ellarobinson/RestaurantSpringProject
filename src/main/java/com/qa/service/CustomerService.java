@@ -27,8 +27,8 @@ public class CustomerService {
 		return this.repo.findAll();
 	}
 	
-	public Customer readCustomerById(int id) {
-		return this.repo.findById(id).orElseThrow();
+	public Customer readCustomerById(int customerId) {
+		return this.repo.findById(customerId).orElseThrow();
 	}
 	
 

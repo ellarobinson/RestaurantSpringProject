@@ -10,7 +10,7 @@ public class Customer {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int customer_id;
+	private int customerId;
 	
 	private String name;
 	private int age;
@@ -31,10 +31,10 @@ public class Customer {
 		this.numOfVisits = numOfVisits;
 	}
 
-	public Customer(int customer_id, String name, int age, String phone, String email, String address,
+	public Customer(int customerId, String name, int age, String phone, String email, String address,
 			int numOfVisits) {
 		super();
-		this.customer_id = customer_id;
+		this.customerId = customerId;
 		this.name = name;
 		this.age = age;
 		this.phone = phone;
@@ -43,12 +43,12 @@ public class Customer {
 		this.numOfVisits = numOfVisits;
 	}
 
-	public int getCustomer_id() {
-		return customer_id;
+	public int getCustomerId() {
+		return customerId;
 	}
 
-	public void setCustomer_id(int customer_id) {
-		this.customer_id = customer_id;
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
 	}
 
 	public String getName() {

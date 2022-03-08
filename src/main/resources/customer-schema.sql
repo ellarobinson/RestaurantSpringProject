@@ -1,6 +1,6 @@
 drop table if exists customer;
 create table customer (
-customer_id integer auto_increment, 
+customer_id integer AUTO_INCREMENT, 
 address varchar(255), 
 age integer not null, 
 email varchar(255), 
