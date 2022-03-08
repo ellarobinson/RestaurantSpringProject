@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -48,6 +49,11 @@ public class Controller {
 	@GetMapping("/getByPhone/{phone}")
 	public ResponseEntity<Customer> readCustomerByPhone(@PathVariable String phone) {
 		return new ResponseEntity<Customer>(this.service.readCustomerByPhone(phone), HttpStatus.OK);
+	}
+	
+	@PutMapping("/update/{id}")
+	public ResponseEntity<Customer> updateCustomer(@PathVariable Integer id, @RequestBody Customer customer) {
+		return new ResponseEntity<Customer>(this.service.updateCustomer(id, customer), HttpStatus.ACCEPTED);
 	}
 
 }

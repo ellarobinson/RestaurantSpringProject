@@ -38,5 +38,16 @@ public class CustomerService {
 	public Customer readCustomerByPhone(String phone) {
 		return this.repo.findByPhone(phone);
 	}
+	
+	public Customer updateCustomer(int customerId, Customer customer) {
+		Customer foundCustomer = this.readCustomerById(customerId);
+		foundCustomer.setName(customer.getName());
+		foundCustomer.setAge(customer.getAge());
+		foundCustomer.setPhone(customer.getPhone());
+		foundCustomer.setEmail(customer.getEmail());
+		foundCustomer.setAddress(customer.getAddress());
+		foundCustomer.setNumOfVisits(customer.getNumOfVisits());
+		return this.repo.save(foundCustomer);
+	}
 
 }

@@ -1,5 +1,7 @@
 package com.qa.entity;
 
+import java.util.Objects;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -98,6 +100,22 @@ public class Customer {
 	public void setNumOfVisits(int numOfVisits) {
 		this.numOfVisits = numOfVisits;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Customer other = (Customer) obj;
+		return Objects.equals(address, other.address) && age == other.age && customerId == other.customerId
+				&& Objects.equals(email, other.email) && Objects.equals(name, other.name)
+				&& numOfVisits == other.numOfVisits && Objects.equals(phone, other.phone);
+	}
+	
+	
 	
 	
 
