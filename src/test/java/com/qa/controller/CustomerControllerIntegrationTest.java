@@ -53,6 +53,7 @@ public class CustomerControllerIntegrationTest {
 		List<Customer> customers = new ArrayList<>();
 		customers.add(new Customer(1, "Mark", 53, "07384916302", "mark@gmail.com", "1 Example Street", 7));
 		customers.add(new Customer(2, "Tracey", 53, "07843964920", "tracey@gmail.com", "2 Example Street", 3));
+		customers.add(new Customer(3, "Mark", 53, "07740173604", "mark@yahoo.com", "3 Example Street", 73));
 		String customersJSON = this.mapper.writeValueAsString(customers);
 		RequestBuilder request = get("/getAll");
 		ResultMatcher resultStatus = status().isOk();
@@ -69,5 +70,21 @@ public class CustomerControllerIntegrationTest {
 		ResultMatcher resutContent = content().json(customerJSON);
 		this.mvc.perform(request).andExpect(resultStatus).andExpect(resutContent);
 	}
+	
+	@Test
+	void readCustomersByNameTest() throws Exception {
+		List<Customer> customers = new ArrayList<>();
+		customers.add(new Customer(1, "Mark", 53, "07384916302", "mark@gmail.com", "1 Example Street", 7));
+		customers.add(new Customer(3, "Mark", 53, "07740173604", "mark@yahoo.com", "3 Example Street", 73));
+		String customersJSON = this.mapper.writeValueAsString(customers);
+		RequestBuilder request = get("/getByName/Mark");
+		ResultMatcher resultStatus = status().isOk();
+		ResultMatcher resultContent = content().json(customersJSON);
+		this.mvc.perform(request).andExpect(resultStatus).andExpect(resultContent);
+	}
+	
+	
+	
+	
 
 }
