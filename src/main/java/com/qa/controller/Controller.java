@@ -39,5 +39,10 @@ public class Controller {
 	public ResponseEntity<Customer> readCustomerById(@PathVariable Integer id) {
 		return new ResponseEntity<Customer>(this.service.readCustomerById(id), HttpStatus.OK);
 	}
+	
+	@GetMapping("/getByName/{name}")
+	public ResponseEntity<List<Customer>> readCustomersByName(@PathVariable String name) {
+		return new ResponseEntity<List<Customer>>(this.service.readCustomersByName(name), HttpStatus.OK);
+	}
 
 }

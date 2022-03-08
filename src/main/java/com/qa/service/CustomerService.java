@@ -31,5 +31,9 @@ public class CustomerService {
 		return this.repo.findById(customerId).orElseThrow();
 	}
 	
+	public List<Customer> readCustomersByName(String name) {
+		return this.repo.findByName(name);
+	}
+	
 
 }
