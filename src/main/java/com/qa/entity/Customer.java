@@ -100,31 +100,6 @@ public class Customer {
 	public void setNumOfVisits(int numOfVisits) {
 		this.numOfVisits = numOfVisits;
 	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(address, age, customer_id, email, name, numOfVisits, phone);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Customer other = (Customer) obj;
-		return Objects.equals(address, other.address) && age == other.age && customer_id == other.customer_id
-				&& Objects.equals(email, other.email) && Objects.equals(name, other.name)
-				&& numOfVisits == other.numOfVisits && Objects.equals(phone, other.phone);
-	}
-
-	@Override
-	public String toString() {
-		return "Customer [customer_id=" + customer_id + ", name=" + name + ", age=" + age + ", phone=" + phone
-				+ ", email=" + email + ", address=" + address + ", numOfVisits=" + numOfVisits + "]";
-	}
 	
 	
 
