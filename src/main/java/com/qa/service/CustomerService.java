@@ -35,5 +35,8 @@ public class CustomerService {
 		return this.repo.findByName(name);
 	}
 	
+	public Customer readCustomerByPhone(String phone) {
+		return this.repo.findByPhone(phone);
+	}
 
 }

@@ -44,5 +44,10 @@ public class Controller {
 	public ResponseEntity<List<Customer>> readCustomersByName(@PathVariable String name) {
 		return new ResponseEntity<List<Customer>>(this.service.readCustomersByName(name), HttpStatus.OK);
 	}
+	
+	@GetMapping("/getByPhone/{phone}")
+	public ResponseEntity<Customer> readCustomerByPhone(@PathVariable String phone) {
+		return new ResponseEntity<Customer>(this.service.readCustomerByPhone(phone), HttpStatus.OK);
+	}
 
 }

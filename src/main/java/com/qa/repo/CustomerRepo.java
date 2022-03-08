@@ -11,5 +11,7 @@ import com.qa.entity.Customer;
 public interface CustomerRepo extends JpaRepository<Customer,Integer> {
 	
 	List<Customer> findByName(String name);
+	
+	Customer findByPhone(String phone);
 
 }
