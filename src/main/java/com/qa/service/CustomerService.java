@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.qa.entity.Customer;
+import com.qa.exceptions.CustomerNotFoundException;
 import com.qa.repo.CustomerRepo;
 
 @Service
@@ -28,7 +29,7 @@ public class CustomerService {
 	}
 	
 	public Customer readCustomerById(int customerId) {
-		return this.repo.findById(customerId).orElseThrow();
+		return this.repo.findById(customerId).orElseThrow(() -> new CustomerNotFoundException("Customer not found by that id."));
 	}
 	
 	public List<Customer> readCustomersByName(String name) {
