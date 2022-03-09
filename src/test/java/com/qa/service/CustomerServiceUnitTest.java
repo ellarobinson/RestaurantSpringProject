@@ -82,6 +82,15 @@ public class CustomerServiceUnitTest {
 		Mockito.verify(this.repo, Mockito.times(1)).save(Mockito.any(Customer.class));
 	}
 	
+	@Test
+	public void deleteCustomerTest() {
+		int id = 1;
+		Mockito.when(this.repo.existsById(id)).thenReturn(false);
+		assertThat(this.service.deleteCustomer(id)).isEqualTo(true);
+		Mockito.verify(this.repo, Mockito.times(1)).deleteById(Mockito.anyInt());
+		Mockito.verify(this.repo, Mockito.times(1)).existsById(Mockito.anyInt());
+	}
+	
 	
 	
 

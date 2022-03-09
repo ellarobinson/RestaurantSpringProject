@@ -49,5 +49,10 @@ public class CustomerService {
 		foundCustomer.setNumOfVisits(customer.getNumOfVisits());
 		return this.repo.save(foundCustomer);
 	}
+	
+	public boolean deleteCustomer(int customerId) {
+		this.repo.deleteById(customerId);
+		return !this.repo.existsById(customerId);
+	}
 
 }
