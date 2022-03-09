@@ -40,8 +40,8 @@ Delete Customer:
 **Database:**
 ![image](https://user-images.githubusercontent.com/97603570/157477386-8c4dfbb3-20bb-4cc0-9e34-3aa492de26bf.png)
 
-**Test results:**
+**Test results & Coverage report:**
+![image](https://user-images.githubusercontent.com/97603570/157480791-6aca44de-2f6d-44e5-a00a-17831ab716ae.png)
 
-**Coverage report:**
-
-**Jira board:** https://ellarobinson.atlassian.net/jira/software/projects/RFP/boards/2/roadmap?shared=&atlOrigin=eyJpIjoiMjgwMzJlNmE1ZjVjNDZjMjkwZWUxMzNiNzhmYmFjODYiLCJwIjoiaiJ9
+**Jira board:**
+https://ellarobinson.atlassian.net/jira/software/projects/RFP/boards/2/roadmap?shared=&atlOrigin=eyJpIjoiMjgwMzJlNmE1ZjVjNDZjMjkwZWUxMzNiNzhmYmFjODYiLCJwIjoiaiJ9
