@@ -19,19 +19,26 @@ This project could be improved with more custom exceptions. At present the datab
 Create Customer:
 ![image](https://user-images.githubusercontent.com/97603570/157475242-232cd766-8527-4bc6-97e6-a0efa1606b35.png)
 
+Read All Customers:
+![image](https://user-images.githubusercontent.com/97603570/157475755-1276effb-3330-4dbc-b337-5b7a5720f3dc.png)
 
 Read Customer By Id:
+![image](https://user-images.githubusercontent.com/97603570/157475915-4da8e41a-2079-4615-befe-0b6a79263d04.png)
 
 Read Customer By Name:
+![image](https://user-images.githubusercontent.com/97603570/157476085-d4ed7db6-8c56-4f55-8b1f-e7815fe476eb.png)
 
 Read Customer By Phone:
+![image](https://user-images.githubusercontent.com/97603570/157476229-76bc3db1-953c-4c8a-a0e2-158532d020f6.png)
 
 Update Customer:
+![image](https://user-images.githubusercontent.com/97603570/157476648-69d1b606-9a36-4931-b0d6-97a65ef9818b.png)
 
 Delete Customer:
+![image](https://user-images.githubusercontent.com/97603570/157477115-8a0b0e65-e03f-4091-bee6-eb4750ffea6a.png)
 
 **Database:**
-
+![image](https://user-images.githubusercontent.com/97603570/157477386-8c4dfbb3-20bb-4cc0-9e34-3aa492de26bf.png)
 
 **Test results:**
 
