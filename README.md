@@ -17,6 +17,8 @@ This project could be improved with more custom exceptions. At present the datab
 **Postman requests and the output from the API:**
 
 Create Customer:
+![image](https://user-images.githubusercontent.com/97603570/157475242-232cd766-8527-4bc6-97e6-a0efa1606b35.png)
+
 
 Read Customer By Id:
 
