@@ -1,5 +1,6 @@
 package com.qa.controller;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
@@ -104,6 +105,13 @@ public class CustomerControllerIntegrationTest {
 		ResultMatcher resultStatus = status().isAccepted();
 		ResultMatcher resultContent = content().json(updatedCustomerJSON);
 		this.mvc.perform(request).andExpect(resultStatus).andExpect(resultContent);
+	}
+	
+	@Test
+	void deleteCustomerTest() throws Exception {
+		RequestBuilder request = delete("/delete/1");
+		ResultMatcher resultStatus = status().isAccepted();
+		this.mvc.perform(request).andExpect(resultStatus);
 	}
 	
 	

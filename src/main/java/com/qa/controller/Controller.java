@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -54,6 +55,16 @@ public class Controller {
 	@PutMapping("/update/{id}")
 	public ResponseEntity<Customer> updateCustomer(@PathVariable Integer id, @RequestBody Customer customer) {
 		return new ResponseEntity<Customer>(this.service.updateCustomer(id, customer), HttpStatus.ACCEPTED);
+	}
+	
+	@DeleteMapping("/delete/{id}")
+	public ResponseEntity<Boolean> deleteCustomer(@PathVariable Integer id) {
+		boolean deleted = this.service.deleteCustomer(id);
+		if(deleted) {
+			return new ResponseEntity<Boolean>(deleted, HttpStatus.ACCEPTED);
+		} else {
+			return new ResponseEntity<Boolean>(deleted, HttpStatus.NOT_ACCEPTABLE);
+		}
 	}
 
 }
