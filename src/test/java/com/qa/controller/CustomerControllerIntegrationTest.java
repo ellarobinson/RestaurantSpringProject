@@ -2,6 +2,7 @@ package com.qa.controller;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -91,6 +92,18 @@ public class CustomerControllerIntegrationTest {
 		ResultMatcher resultStatus = status().isOk();
 		ResultMatcher resutContent = content().json(customerJSON);
 		this.mvc.perform(request).andExpect(resultStatus).andExpect(resutContent);
+	}
+	
+	@Test
+	void updateCustomerTest() throws Exception {
+		Customer updateCustomer = new Customer("Mark", 53, "07384916302", "mark@gmail.com", "1 Example Street", 8);
+		String updateCustomerJSON = this.mapper.writeValueAsString(updateCustomer);
+		Customer updatedCustomer = new Customer(1, "Mark", 53, "07384916302", "mark@gmail.com", "1 Example Street", 8);
+		String updatedCustomerJSON = this.mapper.writeValueAsString(updatedCustomer);
+		RequestBuilder request = put("/update/1").contentType(MediaType.APPLICATION_JSON).content(updateCustomerJSON);
+		ResultMatcher resultStatus = status().isAccepted();
+		ResultMatcher resultContent = content().json(updatedCustomerJSON);
+		this.mvc.perform(request).andExpect(resultStatus).andExpect(resultContent);
 	}
 	
 	
