@@ -44,7 +44,7 @@ Delete Customer:
 
 
 **Test results & Coverage report:**
-![image](https://user-images.githubusercontent.com/97603570/157480791-6aca44de-2f6d-44e5-a00a-17831ab716ae.png)
+![image](https://user-images.githubusercontent.com/97603570/157712664-9522610c-25e6-4467-af44-c1b11e2ebb92.png)
 
 
 **Jira board:**
