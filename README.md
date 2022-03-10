@@ -1,10 +1,10 @@
 **Why am I doing this?**
 
-I am doing this project to showcase the skills I have learnt on this course.
+I am doing this project to showcase the skills I have learnt on this course, including the fundamentals of programming with Java, API development with Spring Boot, databases (H2, MySQL), and automated testing with JUnit & Mockito. I am also demonstrating my Project Management knowledge through the use of Git and Jira.
 
 **How did I expect the challenge to go?**
 
-I expected this challenge to be relatively achievable as I have worked diligently on this course, however I did expect to encounter some problems with testing.
+I expected the coding of this challenge to be relatively achievable as I have worked diligently on this course, however I did expect to encounter some problems with testing. Additionally, I was unsure on how I would perform in the project managament aspect of this project.
 
 **What went well / what didn't go as expected?**
 
@@ -13,6 +13,7 @@ I was successful in completing the challenge of developing an application backen
 **What possible improvements could be made?**
 
 This project could be improved with more custom exceptions. At present the database holds a table of Customer records, however it could also have a table of Employee records.
+
 
 **Postman requests and the output from the API:**
 
@@ -37,11 +38,81 @@ Update Customer:
 Delete Customer:
 ![image](https://user-images.githubusercontent.com/97603570/157477115-8a0b0e65-e03f-4091-bee6-eb4750ffea6a.png)
 
+
 **Database:**
 ![image](https://user-images.githubusercontent.com/97603570/157477386-8c4dfbb3-20bb-4cc0-9e34-3aa492de26bf.png)
+
 
 **Test results & Coverage report:**
 ![image](https://user-images.githubusercontent.com/97603570/157480791-6aca44de-2f6d-44e5-a00a-17831ab716ae.png)
 
+
 **Jira board:**
 https://ellarobinson.atlassian.net/jira/software/projects/RFP/boards/2/roadmap?shared=&atlOrigin=eyJpIjoiMjgwMzJlNmE1ZjVjNDZjMjkwZWUxMzNiNzhmYmFjODYiLCJwIjoiaiJ9
+
+
+**Risk Assessment:**
+
+Risk: The application is broke.
+
+Evaluation: Part or all of the functionality of the application doesn't work.
+
+Likelihood: Medium
+
+Impact Level: High
+
+Response: Created Service Unit Tests and Controller Integration Tests.
+
+Control Measure: Run tests before deploying.
+
+---
+Risk: Two or more customers are given the same ID.
+
+Evaluation: The wrong customer's information is found, updated, or deleted.
+
+Likelihood: Low
+
+Impact Level: High
+
+Response: Make "customerID" unique.
+
+Control Measures: Annotated customerID as @ID @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+---
+Risk: A customer record is made twice.
+
+Evaluation: There is an out-of-date customer record in the database to be found and used incorrectly.
+
+Likelihood: Low
+
+Impact Level: Medium
+
+Response: Make "phone" and "email" unique, so multiple records cannot be made with the same phone number or email address.
+
+Control Measure: Annotated "phone" and "email" columns as @UniqueContraint
+
+---
+Risk: Customer details are accidentally changed when updating numOfVisits.
+
+Evaluation: Customer's details are incorrect.
+
+Likelihood: Medium
+
+Impact Level: High
+
+Response: Created a function to update numOfVisits by 1 and nothing else.
+
+Control Measure: Use the "/updateVisit/{id}" function, rather than update the whole record.
+
+---
+Risk: Customer cannot be found because customerID is unknown.
+
+Evaluation: The customer's information cannot be found.
+
+Likelihood: High
+
+Impact Level: Medium
+
+Response: Created function to find a customer by their phone number.
+
+Control Measure: Use the "/getByPhone/{phone}" function, rather than getById.
