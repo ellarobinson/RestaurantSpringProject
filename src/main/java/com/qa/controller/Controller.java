@@ -66,5 +66,10 @@ public class Controller {
 			return new ResponseEntity<Boolean>(deleted, HttpStatus.NOT_ACCEPTABLE);
 		}
 	}
+	
+	@PutMapping("updateVisit/{id}")
+	public ResponseEntity<Customer> updateCustomerVisit(@PathVariable Integer id) {
+		return new ResponseEntity<Customer>(this.service.updateCustomerVisit(id), HttpStatus.ACCEPTED);
+	}
 
 }
