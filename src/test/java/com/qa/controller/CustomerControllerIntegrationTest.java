@@ -114,6 +114,16 @@ public class CustomerControllerIntegrationTest {
 		this.mvc.perform(request).andExpect(resultStatus);
 	}
 	
+	@Test
+	void updateCustomerVisitTest() throws Exception {
+		Customer updatedCustomer = new Customer(1, "Mark", 53, "07384916302", "mark@gmail.com", "1 Example Street", 8);
+		String updatedCustomerJSON = this.mapper.writeValueAsString(updatedCustomer);
+		RequestBuilder request = put("/updateVisit/1");
+		ResultMatcher resultStatus = status().isAccepted();
+		ResultMatcher resultContent = content().json(updatedCustomerJSON);
+		this.mvc.perform(request).andExpect(resultStatus).andExpect(resultContent);
+	}
+	
 	
 	
 	

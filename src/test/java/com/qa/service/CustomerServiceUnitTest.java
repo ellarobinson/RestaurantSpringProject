@@ -91,6 +91,18 @@ public class CustomerServiceUnitTest {
 		Mockito.verify(this.repo, Mockito.times(1)).existsById(Mockito.anyInt());
 	}
 	
+	@Test
+	public void updateCustomerVisitTest() {
+		int id = 1;
+		Customer savedCustomer = new Customer(1, "Mark", 53, "07384916302", "mark@gmail.com", "1 Example Street", 7);
+		Customer updatedCustomer = new Customer(1, "Mark", 53, "07384916302", "mark@gmail.com", "1 Example Street", 8);
+		Mockito.when(this.repo.findById(id)).thenReturn(Optional.of(savedCustomer));
+		Mockito.when(this.repo.save(updatedCustomer)).thenReturn(updatedCustomer);
+		assertThat(this.service.updateCustomerVisit(id)).isEqualTo(updatedCustomer);
+		Mockito.verify(this.repo, Mockito.times(1)).findById(Mockito.anyInt());
+		Mockito.verify(this.repo, Mockito.times(1)).save(Mockito.any(Customer.class));
+	}
+	
 	
 	
 

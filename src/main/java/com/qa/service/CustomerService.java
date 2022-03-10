@@ -55,5 +55,11 @@ public class CustomerService {
 		this.repo.deleteById(customerId);
 		return !this.repo.existsById(customerId);
 	}
+	
+	public Customer updateCustomerVisit (int customerId) {
+		Customer foundCustomer = this.readCustomerById(customerId);
+		foundCustomer.setNumOfVisits(foundCustomer.getNumOfVisits() + 1);
+		return this.repo.save(foundCustomer);
+	}
 
 }
