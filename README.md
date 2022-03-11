@@ -15,32 +15,36 @@ I was successful in completing the challenge of developing an application backen
 This project could be improved with more custom exceptions. At present the database holds a table of Customer records, however it could also have a table of Employee records.
 
 
-**Postman requests and the output from the API:**
+**Postman requests & outputs, and in MySQL database:**
 
 Create Customer:
-![image](https://user-images.githubusercontent.com/97603570/157475242-232cd766-8527-4bc6-97e6-a0efa1606b35.png)
+![image](https://user-images.githubusercontent.com/97603570/157855627-508b281f-4ec0-4004-bf21-16b4633b62a5.png)
+![image](https://user-images.githubusercontent.com/97603570/157855670-07bec8fe-e79f-4a71-b3f5-7dfd9e2dc86d.png)
 
 Read All Customers:
-![image](https://user-images.githubusercontent.com/97603570/157475755-1276effb-3330-4dbc-b337-5b7a5720f3dc.png)
+![image](https://user-images.githubusercontent.com/97603570/157855735-0dcb6258-f0d2-4232-84a7-7481c7cc72cd.png)
+![image](https://user-images.githubusercontent.com/97603570/157855789-83b086ef-b20c-4406-a248-7cb763bfa70a.png)
 
 Read Customer By Id:
-![image](https://user-images.githubusercontent.com/97603570/157475915-4da8e41a-2079-4615-befe-0b6a79263d04.png)
+![image](https://user-images.githubusercontent.com/97603570/157855877-ec9a2d00-b693-4f5f-ad9d-555d23fe68c7.png)
 
 Read Customer By Name:
-![image](https://user-images.githubusercontent.com/97603570/157476085-d4ed7db6-8c56-4f55-8b1f-e7815fe476eb.png)
+![image](https://user-images.githubusercontent.com/97603570/157855911-1aaa8660-6020-4f3d-8ad4-5f9d7339fd0a.png)
 
 Read Customer By Phone:
-![image](https://user-images.githubusercontent.com/97603570/157476229-76bc3db1-953c-4c8a-a0e2-158532d020f6.png)
+![image](https://user-images.githubusercontent.com/97603570/157855980-c8406b94-52a6-44ce-b19b-4f89e658438c.png)
 
 Update Customer:
-![image](https://user-images.githubusercontent.com/97603570/157476648-69d1b606-9a36-4931-b0d6-97a65ef9818b.png)
+![image](https://user-images.githubusercontent.com/97603570/157856032-8a49be02-ba60-4c05-8b55-54d1e1c1246d.png)
+![image](https://user-images.githubusercontent.com/97603570/157856083-7e694d5b-54b0-42dd-b625-360914176a85.png)
+
+Update Customer Visits:
+![image](https://user-images.githubusercontent.com/97603570/157856135-e10ba49e-0e25-4500-9faa-9842c9644460.png)
+![image](https://user-images.githubusercontent.com/97603570/157856154-8db19a0a-cb64-4852-ab81-e7d7055d813b.png)
 
 Delete Customer:
-![image](https://user-images.githubusercontent.com/97603570/157477115-8a0b0e65-e03f-4091-bee6-eb4750ffea6a.png)
-
-
-**Database:**
-![image](https://user-images.githubusercontent.com/97603570/157477386-8c4dfbb3-20bb-4cc0-9e34-3aa492de26bf.png)
+![image](https://user-images.githubusercontent.com/97603570/157856211-61fba916-4d7f-4fa6-a552-f4f53df44ceb.png)
+![image](https://user-images.githubusercontent.com/97603570/157856237-4ec393e6-ead7-43cf-a47b-5de405b2d81b.png)
 
 
 **Test results & Coverage report:**
@@ -53,7 +57,7 @@ https://ellarobinson.atlassian.net/jira/software/projects/RFP/boards/2/roadmap?s
 
 **Risk Assessment:**
 
-Risk: The application is broke.
+Risk: The application is broken.
 
 Evaluation: Part or all of the functionality of the application doesn't work.
 
